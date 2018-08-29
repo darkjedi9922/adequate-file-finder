@@ -1,7 +1,7 @@
 const assert = require('assert');
 const find = require('..');
 
-describe('when in the pattern is symbol * in the filename part', function() {
+describe('module', function() {
     
     it('finds files of the form *.js', function () {
         assert.deepEqual(find('tests/example/*.js'), [
