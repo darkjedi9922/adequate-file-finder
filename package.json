@@ -1,0 +1,22 @@
+{
+  "name": "adequate-file-finder",
+  "version": "0.0.0",
+  "description": "Adequate finds files by the pattern form",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "keywords": [
+    "find",
+    "files",
+    "pattern"
+  ],
+  "author": "Jed Dark",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
