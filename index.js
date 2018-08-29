@@ -14,7 +14,7 @@ module.exports = function(pattern) {
 }
 
 function filter(files, pattern) {
-    var regexp = new RegExp('^' + pattern.replace('*', '\.*') + '$');
+    var regexp = new RegExp('^' + pattern.replace(/\./g, '\\.').replace(/\*/g, '\.*') + '$');
     var result = [];
     for (var i = 0; i < files.length; ++i) {
         if (regexp.test(files[i])) result.push(files[i]);
