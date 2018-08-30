@@ -1,7 +1,13 @@
 const PathPattern = require('./classes/path-pattern');
 const DirList = require('./classes/dir-list');
 
-module.exports = function(pattern) {
+if (module.parent) module.exports = adequateFindFiles;
+else {
+    var result = adequateFindFiles(process.argv[2]);
+    for (var i = 0; i < result.length; ++i) console.log(result[i]);
+}
+
+function adequateFindFiles(pattern) {
 
     if (typeof pattern !== 'string') return [];
 
