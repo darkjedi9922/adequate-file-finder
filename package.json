@@ -3,17 +3,21 @@
   "version": "0.1.0",
   "description": "Adequate finds files by the pattern form",
   "main": "index.js",
-  "directories": {
-    "test": "tests"
+  "bin": {
+    "adequate-file-finder" : "./bin/adequate-file-finder.js" 
   },
   "scripts": {
     "test": "mocha tests"
   },
-  "keywords": [
-    "find",
-    "files",
-    "pattern"
-  ],
+  "keywords": ["find", "locate", "search", "file", "files", "dir", "dirs", "pattern" ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darkjedi9922/adequate-file-finder.git"
+  },
+  "homepage": "https://github.com/darkjedi9922/adequate-file-finder#readme",
+  "bugs": {
+    "url": "https://github.com/darkjedi9922/adequate-file-finder/issues"
+  },
   "author": "Jed Dark",
   "license": "ISC",
   "devDependencies": {
