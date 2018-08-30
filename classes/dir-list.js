@@ -31,9 +31,22 @@ DirList.prototype.findSubdirsByName = function(dirname) {
 }
 
 // (pattern: string) => array
-DirList.prototype.findSubdirsByPattern = function (pattern) {
+DirList.prototype.findSubdirsByPattern = function(pattern) {
     if (pattern === '**') return this.findAllSubdirs();
     else return this.findSubdirsByName(pattern);
+}
+
+// (pattern: string) => array
+DirList.prototype.findFilesByPattern = function(pattern) {
+    var regexp = new RegExp('^' + pattern.replace(/\./g, '\\.').replace(/\*/g, '\.*') + '$');
+    var result = [];
+    for (var i = 0; i < this.list.length; ++i) {
+        var files = fs.readdirSync(this.list[i]);
+        for (var j = 0; j < files.length; ++j) {
+            if (regexp.test(files[j])) result.push(pm.join(this.list[i], files[j]));
+        }
+    }
+    return result;
 }
 
 module.exports = DirList;

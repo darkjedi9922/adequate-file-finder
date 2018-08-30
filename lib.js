@@ -3,7 +3,7 @@ const fs = require('fs');
 
 // (path: string) => string
 exports.pathToAbsolute = function(path) {
-    return '/' + pm.relative('/', './' + path);
+    return '/' + pm.relative('/', path);
 }
 
 // (files: array) => array

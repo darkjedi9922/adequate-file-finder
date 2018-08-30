@@ -11,6 +11,7 @@ describe('DirList class', function() {
 
         assert.deepEqual(list.findAllSubdirs(), [
             'tests/example',
+            'tests/example/dir',
             'tests/example/dir-1',
             'tests/example/dir-2'
         ])
@@ -35,8 +36,19 @@ describe('DirList class', function() {
 
         assert.deepEqual(list.findSubdirsByPattern('**'), [
             'tests/example',
+            'tests/example/dir',
             'tests/example/dir-1',
             'tests/example/dir-2'
+        ])
+    });
+
+    it('finds file list of self dirs by pattern', function () {
+        var list = new DirList(['tests/example', 'tests/example/dir']);
+
+        assert.deepEqual(list.findFilesByPattern('*.js'), [
+            'tests/example/file-1.js',
+            'tests/example/file-2.js',
+            'tests/example/dir/file.js'
         ])
     });
 });
