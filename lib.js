@@ -11,7 +11,10 @@ exports.filterDirs = function(files) {
     var result = [];
     for (var i = 0; i < files.length; ++i) {
         var file = files[i];
-        if (fs.existsSync(file) && fs.lstatSync(file).isDirectory()) result.push(file);
+        if (!fs.existsSync(file)) continue;
+        var lstat = fs.lstatSync(file);
+        if (lstat.isSymbolicLink()) lstat = fs.lstatSync(fs.readlinkSync(file));
+        if (lstat.isDirectory()) result.push(file);
     }
     return result;
 }
