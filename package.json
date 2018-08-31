@@ -1,6 +1,6 @@
 {
   "name": "adequate-file-finder",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Adequate finds files by the pattern form",
   "main": "index.js",
   "bin": {
