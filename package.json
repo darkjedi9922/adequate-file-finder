@@ -19,7 +19,7 @@
     "url": "https://github.com/darkjedi9922/adequate-file-finder/issues"
   },
   "author": "Jed Dark",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "mocha": "^5.2.0"
   }
