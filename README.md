@@ -1,8 +1,8 @@
+# Adequate File Finder
 Simple and fast adeaquate file and directory finder from path patterns. Can be used as a module and as an application.
 
-**Files and directories is found from current working directory.**
-
-**The path of the finded files and directories is from root directory.**
+## Installation
+`npm install adequate-file-finder`
 
 ## Usage as a module
 
