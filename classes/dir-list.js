@@ -2,12 +2,10 @@ var fs = require('fs');
 var lib = require('../lib');
 var pm = require('path');
 
-// (list: array of absolute paths to dirs)
 function DirList(list) {
     this.list = list;
 }
 
-// () => array
 DirList.prototype.findAllSubdirs = function() {
     var result = [];
     for (var i = 0; i < this.list.length; ++i) {
@@ -19,7 +17,6 @@ DirList.prototype.findAllSubdirs = function() {
     return result;
 }
 
-// (dirname: string) => array
 DirList.prototype.findSubdirsByName = function(dirname) {
     var result = [];
     for (var i = 0; i < this.list.length; ++i) {
@@ -30,13 +27,11 @@ DirList.prototype.findSubdirsByName = function(dirname) {
     return result;
 }
 
-// (pattern: string) => array
 DirList.prototype.findSubdirsByPattern = function(pattern) {
     if (pattern === '**') return this.findAllSubdirs();
     else return this.findSubdirsByName(pattern);
 }
 
-// (pattern: string) => array
 DirList.prototype.findFilesByPattern = function(pattern) {
     var regexp = new RegExp('^' + pattern.replace(/\./g, '\\.').replace(/\*/g, '\.*') + '$');
     var result = [];
