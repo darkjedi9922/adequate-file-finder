@@ -10,6 +10,13 @@ describe('PathPattern class', function() {
         assert.equal(pattern.pattern, cwd);
     });
 
+    it('trasforms the given non-existence path to absolute in the constructor', function () {
+        var cwd = process.cwd(); // cwd is absolute
+        var pattern = new PathPattern('non-existence-dir');
+
+        assert.equal(pattern.pattern, cwd + '/non-existence-dir');
+    });
+
     it('does not trasform the given absolute path to absolute in the constructor', function () {
         var cwd = process.cwd(); // cwd is absolute
         var pattern = new PathPattern(cwd);

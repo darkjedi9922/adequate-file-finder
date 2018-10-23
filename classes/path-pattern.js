@@ -1,7 +1,7 @@
-const lib = require('../lib');
+const pm = require('path');
 
 function PathPattern(pattern) {
-    this.pattern = lib.pathToAbsolute(pattern);
+    this.pattern = pm.resolve(pattern);
 }
 
 PathPattern.prototype.getLastPart = function() {

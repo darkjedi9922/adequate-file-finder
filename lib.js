@@ -1,9 +1,4 @@
-const pm = require('path');
 const fs = require('fs');
-
-exports.pathToAbsolute = function(path) {
-    return '/' + pm.relative('/', path);
-}
 
 exports.filterDirs = function(files) {
     var result = [];
