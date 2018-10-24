@@ -10,7 +10,7 @@ PathPattern.prototype.getLastPart = function() {
 }
 
 PathPattern.prototype.getParts = function() {
-    return this.pattern.split('/');
+    return this.pattern.split(pm.sep);
 }
 
 module.exports = PathPattern;

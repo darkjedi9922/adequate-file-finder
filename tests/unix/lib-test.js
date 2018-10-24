@@ -1,5 +1,5 @@
 var assert = require('assert');
-var lib = require('../lib');
+var lib = require('../../lib');
 
 describe('library', function () {
 

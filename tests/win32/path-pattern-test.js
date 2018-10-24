@@ -1,11 +1,11 @@
 var assert = require('assert');
-var PathPattern = require('../classes/path-pattern');
+var PathPattern = require('../../classes/path-pattern');
 
 describe('PathPattern class', function() {
 
     it('trasforms the given path to absolute in the constructor', function () {
         var cwd = process.cwd(); // cwd is absolute
-        var pattern = new PathPattern('./');
+        var pattern = new PathPattern('.\\');
 
         assert.equal(pattern.pattern, cwd);
     });
@@ -14,7 +14,7 @@ describe('PathPattern class', function() {
         var cwd = process.cwd(); // cwd is absolute
         var pattern = new PathPattern('non-existence-dir');
 
-        assert.equal(pattern.pattern, cwd + '/non-existence-dir');
+        assert.equal(pattern.pattern, cwd + '\\non-existence-dir');
     });
 
     it('does not trasform the given absolute path to absolute in the constructor', function () {
@@ -25,9 +25,9 @@ describe('PathPattern class', function() {
     });
 
     it('returns all parts', function() {
-        var path = 'example/dir'
+        var path = 'example\\dir'
         var pattern = new PathPattern(path);
-        assert.deepEqual(pattern.getParts(), (process.cwd() + '/' + path).split('/'));
+        assert.deepEqual(pattern.getParts(), (process.cwd() + '\\' + path).split('\\'));
     });
 
     it('returns last part', function () {
