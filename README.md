@@ -25,6 +25,12 @@ resultArray = fileFind('path/to/non-existence-file.html');
 
 // directories also is in the result
 resultArray = fileFind('path/to/dirs/*');
+
+// for windows there is windows paths
+// it works just like the unix
+resultArray = fileFind('C:\\path\\**\\dir\*');
+resultArray = fileFind('path\\**\\dir\*');
+// ...
 ```
 
 ## Usage as an application
@@ -35,3 +41,19 @@ Basics the same as in the module usage.
 node adequate-file-finder 'path/to/**/dir/*.*'
 # here will appear list of the files
 ```
+
+## Changelog
+
+#### v0.2.0
+* Add typescript definitions
+* **Add support for windows paths.**
+
+#### v0.1.2
+* Fix bug when there is trying to read a broken link
+
+#### v0.1.1
+* Do not filter out symbolic links on dirs
+* Depart cli usage to single bin file
+
+#### v0.1.0
+* Base implementation

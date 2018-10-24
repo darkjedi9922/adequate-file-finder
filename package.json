@@ -1,13 +1,14 @@
 {
   "name": "adequate-file-finder",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Adequate finds files by the pattern form",
   "main": "index.js",
   "bin": {
     "adequate-file-finder" : "./bin/adequate-file-finder.js" 
   },
   "scripts": {
-    "test": "mocha tests"
+    "test-unix": "mocha tests/unix",
+    "test-win32": "mocha tests/win32"
   },
   "keywords": ["find", "locate", "search", "file", "files", "dir", "dirs", "pattern" ],
   "repository": {

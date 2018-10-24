@@ -1,4 +1,4 @@
-var DirList = require('..\\..\\classes\\dir-list');
+var DirList = require('../../classes/dir-list');
 var assert = require('assert');
 var pm = require('path');
 var fs = require('fs');

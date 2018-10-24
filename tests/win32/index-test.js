@@ -1,5 +1,5 @@
 const assert = require('assert');
-const find = require('..\\..');
+const find = require('../..');
 const pm = require('path');
 const fs = require('fs');
 
